@@ -1,6 +1,6 @@
 # XD501 - XDOMEA 2 Anbietungsbewerter
  
-Der **XDOMEA 2 Anbietungsbewerter** ist ein von [PDV-Systeme GmbH](https://www.pdv.de/) entwickeltes Tool zur Bewertung von Aussonderungslisten nach der [XDOMEA Spezifikation](http://www.xdomea.de/).
+Der **XDOMEA 2 Anbietungsbewerter** ist ein von [PDV-Systeme GmbH](https://www.pdv.de/) entwickeltes Tool zur Bewertung von [XDOMEA konformen](http://www.xdomea.de/) Aussonderungslisten.
  
 Ziel des Programmes ist es grundlegende Funktionalitäten zur Bewertung von Lieferlisten bereitzustellen. Es dient also dem Einlesen von Lieferlisten (Nachrichtentyp 0501), der Bewertung der Akten und Akteninhalte und der anschließenden Ausgabe der bewertenden Lieferlisten (Nachrichtentyp 0502).
 
@@ -12,7 +12,8 @@ Den Download der aktuellen Version finden sie [hier](https://github.com/MartinWe
  
 # Kontext
  
-Die VIS-SUITE der [PDV-Systeme GmbH](https://www.pdv.de/) ist eine Produktlinie zur ganzheitlichen digitalen Aktenführung und Vorgangsbearbeitung, dass Aussonderung nach der XDOMEA Spezifikation unterstützt. Die Bewertung der Lieferlisten kann mit dem **XDOMEA 2 Anbietungsbewerter** erfolgen. Dieser ist aber auch unabhängig von der VIS-SUITE verwendbar und setzt weder einen Zugriff auf einen VIS Mandanten, noch einen VIS Clienten voraus.
+Die VIS-SUITE der [PDV-Systeme GmbH](https://www.pdv.de/) ist eine Produktlinie zur ganzheitlichen digitalen Aktenführung und Vorgangsbearbeitung, dass die XDOMEA konforme
+Gestaltung des Aussonderungsprozesses unterstützt. Die Bewertung der Lieferlisten kann mit dem **XDOMEA 2 Anbietungsbewerter** erfolgen. Dieser ist aber auch unabhängig von der VIS-SUITE verwendbar und setzt weder einen Zugriff auf einen VIS Mandanten, noch einen VIS Clienten voraus.
  
 # Technische Ideen
 Die Applikation verfolgt folgende Design-Ideen:
