@@ -1,0 +1,68 @@
+=== Angezeigte Felder Oberfläche ===
+
+Absender
+	Behörde
+	Dokumentenmanagement
+	Erstellungszeitpunkt
+	ProzessID
+	Ansprechpartner Vorname
+	Ansprechpartner Nachname
+	
+Akte
+	ID
+	Aktenplan
+	Kennzeichen
+	Betreff
+	Federführend
+	Aktentyp
+	Medium
+	[Aussonderungsart]
+	Anzahl Vorgänge
+	
+Vorgang
+	ID
+	Kennzeichen
+	Betreff
+	Vorgangstyp
+	Medium
+	Laufzeit von
+	Laufzeit bis
+	Aufbew.-Frist
+	[Aussonderungsart]
+	
+=== Unterstützte Felder Ini ===
+[SendendesSystem]
+InstanzID=
+Produktname=
+Version=
+[Institution]
+Name=
+Kurzbezeichnung=
+[Organisationseinheit]
+Name=
+[Name]
+Anrede=
+Titel=
+Familienname=
+Vorname=
+[Zustaendigkeit]
+Name=
+[Anschrift]
+StaatCode=
+StaatName=
+Strasse=
+Hausnummer=
+Postfach=
+Postleitzahl=
+Ort=
+Zusatz=
+[Kommunikation1]
+KanalCode=
+KanalName=
+Kennung=
+Zusatz=
+[Kommunikation2]
+KanalCode=
+KanalName=
+Kennung=
+Zusatz=

@@ -1,0 +1,317 @@
+﻿<DockPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:local="clr-namespace:XD501;assembly=XD501"
+           xmlns:sys="clr-namespace:System;assembly=mscorlib"
+           Margin="10">
+    <DockPanel.Resources>
+        <local:SelectionConverter x:Key="SelectionConverter" />
+
+        <Style TargetType="UniformGrid">
+            <Setter Property="Rows" Value="2" />
+            <Setter Property="Margin" Value="10,0" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding XPath=//xdomea:Schriftgutobjekt/xdomea:Akte}" Value="{x:Null}">
+                    <Setter Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="Title"
+               TargetType="Label">
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+        <Style x:Key="Header"
+               TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="DockPanel.Dock" Value="Right" />
+        </Style>
+
+        <Style TargetType="local:LayoutGroup">
+            <Setter Property="Background" Value="White" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding XPath=//xdomea:Schriftgutobjekt/xdomea:Akte}" Value="{x:Null}">
+                    <Setter Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DockPanel">
+            <Setter Property="DockPanel.Dock" Value="Top" />
+        </Style>
+
+        <Style x:Key="EmptyNote"
+               TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="DarkGray" />
+        </Style>
+
+        <Style x:Key="HorizontalLine"
+               TargetType="Border">
+            <Setter Property="Margin" Value="-10,0,-10,0" />
+            <Setter Property="BorderThickness" Value="0,1,0,0" />
+            <Setter Property="BorderBrush" Value="DarkGray" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+        </Style>
+
+        <Style x:Key="VerticalLine"
+               TargetType="Border">
+            <Setter Property="Margin" Value="10,0,0,0" />
+            <Setter Property="BorderThickness" Value="0,0,1,0" />
+            <Setter Property="BorderBrush" Value="DarkGray" />
+            <Setter Property="DockPanel.Dock" Value="Left" />
+        </Style>
+
+    </DockPanel.Resources>
+
+
+
+    <!--  Überschrift und Paketauswahl  -->
+    <DockPanel>
+        <Button Content="Paket _auswählen"
+                Command="Open" />
+        <Label Style="{StaticResource Title}">Anbietungsbewerter</Label>
+    </DockPanel>
+
+    <Border Style="{StaticResource HorizontalLine}" />
+
+    <StackPanel Grid.Column="1"
+                    Margin="0,10" DockPanel.Dock="Bottom"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal">
+        <Button Content="_Speichern"
+                    IsDefault="True"
+                    Command="Save" />
+        <Button Content="_Beenden"
+                    Command="Close" />
+    </StackPanel>
+      <Border DockPanel.Dock="Bottom" Style="{StaticResource HorizontalLine}" />  
+
+
+    <Grid DataContext="{Binding X501DocumentDP}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--  Linke Spalte (Paketdetails)  -->
+        <DockPanel>
+            <Grid>
+                <Label Style="{StaticResource EmptyNote}">Kein Paket geladen</Label>
+                <local:LayoutGroup>
+                    <Label Style="{StaticResource Header}">Paketdetails</Label>
+                    <local:LabelledTextBox Label="Behörde"
+                                           Text="{Binding XPath=xdomea:Aussonderung.Anbieteverzeichnis.0501/xdomea:Kopf/xdomea:Absender/xdomea:Behoerdenkennung/xdomea:Kennung/code, FallbackValue=-}" />
+                    <local:LabelledTextBox Label="DMS"
+                                           Text="{Binding XPath=xdomea:Aussonderung.Anbieteverzeichnis.0501/xdomea:Kopf/xdomea:SendendesSystem/xdomea:Produktname, FallbackValue=-}" />
+                    <local:LabelledTextBox Label="Erstellt"
+                                           Text="{Binding XPath=xdomea:Aussonderung.Anbieteverzeichnis.0501/xdomea:Kopf/xdomea:Erstellungszeitpunkt, FallbackValue=-}" />
+                    <local:LabelledTextBox Label="Prozess-ID"
+                                           Text="{Binding XPath=xdomea:Aussonderung.Anbieteverzeichnis.0501/xdomea:Kopf/xdomea:ProzessID, FallbackValue=-}" />
+                    <local:LabelledTextBox Label="Vorname"
+                                           Text="{Binding XPath=xdomea:Aussonderung.Anbieteverzeichnis.0501/xdomea:Kopf/xdomea:Absender/xdomea:Name/xdomea:Vorname, FallbackValue=-}" />
+                    <local:LabelledTextBox Label="Nachname"
+                                           Text="{Binding XPath=xdomea:Aussonderung.Anbieteverzeichnis.0501/xdomea:Kopf/xdomea:Absender/xdomea:Name/xdomea:Familienname, FallbackValue=-}" />
+                </local:LayoutGroup>
+            </Grid>
+        </DockPanel>
+
+        <GridSplitter Width="10"
+                      HorizontalAlignment="Right"
+                      Background="Transparent"
+                      BorderThickness="0,0,1,0"
+                      BorderBrush="DarkGray" />
+
+        <!--  Rechte Spalte (Akten und Vorgänge)  -->      
+        <UniformGrid Grid.Column="1" Margin="5"
+                     DataContext="{Binding XPath=//xdomea:Schriftgutobjekt/xdomea:Akte}">
+            <DockPanel>
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Right"
+                                Orientation="Horizontal">
+                        <Label>Alle Akten:</Label>
+                        <Button Content="Archivieren"
+                                Command="{x:Static local:LocalCommands.SetAllCommand}" />
+                        <Button Content="Bewerten"
+                                Command="{x:Static local:LocalCommands.SetAllCommand}" />
+                        <Button Content="Vernichten"
+                                Command="{x:Static local:LocalCommands.SetAllCommand}" />
+                    </StackPanel>
+                    <Label Style="{StaticResource Header}"
+                           DockPanel.Dock="Left"
+                           Content="{Binding Count, FallbackValue=0}"
+                           ContentStringFormat="Akten ({0})" />
+                </DockPanel>
+                <ListView ItemsSource="{Binding}"
+                          IsSynchronizedWithCurrentItem="true">
+                    <ListView.View>
+                        <GridView x:Name="ListeAkten"
+                                  AllowsColumnReorder="False">
+                            <GridViewColumn Width="255"
+                                            Header="ID"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:Identifikation/xdomea:ID}" />
+                            <GridViewColumn Width="185"
+                                            Header="Aktenplan"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Betreff}" />
+                            <GridViewColumn Width="105"
+                                            Header="Kennzeichen"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Kennzeichen}" />
+                            <GridViewColumn Width="190"
+                                            Header="Betreff"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Betreff}" />
+                            <GridViewColumn Width="120"
+                                            Header="Federführend"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Federfuehrung}" />
+                            <GridViewColumn Width="150"
+                                            Header="Aktentyp"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:Typ}" />
+                            <GridViewColumn Width="100"
+                                            Header="Medium"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Medium/name}" />
+
+                            <GridViewColumn Width="105"
+                                            Header="Aussonderungsart">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DockPanel HorizontalAlignment="Center">
+                                            <ComboBox Width="90"
+                                                      SelectedValue="{Binding XPath=xdomea:AllgemeineMetadaten/_Selection, Converter={StaticResource SelectionConverter}}">
+                                                <sys:String>Archivieren</sys:String>
+                                                <sys:String>Bewerten</sys:String>
+                                                <sys:String>Vernichten</sys:String>
+                                            </ComboBox>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Width="25"
+                                            Header="Archivieren Anzahl">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel DataContext="{Binding XPath='xdomea:Akteninhalt/xdomea:Vorgang/xdomea:AllgemeineMetadaten[_Selection=&quot;A&quot;]'}">
+                                            <TextBlock Text="{Binding Count}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Width="25"
+                                            Header="Bewerten Anzahl">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel DataContext="{Binding XPath='xdomea:Akteninhalt/xdomea:Vorgang/xdomea:AllgemeineMetadaten[_Selection=&quot;B&quot;]'}">
+                                            <TextBlock Text="{Binding Count}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Width="25"
+                                            Header="Vernichten Anzahl">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel DataContext="{Binding XPath='xdomea:Akteninhalt/xdomea:Vorgang/xdomea:AllgemeineMetadaten[_Selection=&quot;V&quot;]'}">
+                                            <TextBlock Text="{Binding Count}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+            <DockPanel Margin="0,10,0,0"
+                       DataContext="{Binding XPath=xdomea:Akteninhalt/xdomea:Vorgang}">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal"
+                                DockPanel.Dock="Right">
+                        <Label>Gesamten Inhalt:</Label>
+                        <Button Content="Archivieren"
+                                Command="{x:Static local:LocalCommands.SetAllCommand}" />
+                        <Button Content="Bewerten"
+                                Command="{x:Static local:LocalCommands.SetAllCommand}" />
+                        <Button Content="Vernichten"
+                                Command="{x:Static local:LocalCommands.SetAllCommand}" />
+                    </StackPanel>
+                    <TextBlock>
+                        <Run Text="Akte"
+                             FontWeight="Bold" />
+                        <Run Text="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Kennzeichen}"
+                             FontWeight="Bold" />
+                        <Run Text="&gt; Akteninhalt (" />
+                        <Run Text="{Binding Count, Mode=OneWay}" />
+                        <Run Text=")" />
+                    </TextBlock>
+                </DockPanel>
+
+                <ListView x:Name="VorgangList"
+                          ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn Width="255"
+                                            Header="ID"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:Identifikation/xdomea:ID}" />
+                            <GridViewColumn Width="155"
+                                            Header="Kennzeichen"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Kennzeichen}" />
+                            <GridViewColumn Width="205"
+                                            Header="Betreff"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Betreff}" />
+                            <GridViewColumn Width="75"
+                                            Header="Vorgangstyp"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:Typ}" />
+                            <GridViewColumn Width="100"
+                                            Header="Medium"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:AllgemeineMetadaten/xdomea:Medium/name}" />
+                            <GridViewColumn Width="80"
+                                            Header="Laufzeit von"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:Laufzeit/xdomea:Beginn}" />
+                            <GridViewColumn Width="80"
+                                            Header="Laufzeit bis"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:Laufzeit/xdomea:Ende}" />
+                            <GridViewColumn Width="80"
+                                            Header="Aufbew.-Frist"
+                                            DisplayMemberBinding="{Binding XPath=xdomea:ArchivspezifischeMetadaten/xdomea:Aufbewahrungsdauer}" />
+                            <GridViewColumn Width="105"
+                                            Header="Aussonderungsart">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DockPanel HorizontalAlignment="Center">
+                                            <ComboBox Width="90"
+                                                      SelectedValue="{Binding XPath=xdomea:AllgemeineMetadaten/_Selection, Converter={StaticResource SelectionConverter}}">
+                                                <sys:String>Archivieren</sys:String>
+                                                <sys:String>Bewerten</sys:String>
+                                                <sys:String>Vernichten</sys:String>
+                                            </ComboBox>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+        </UniformGrid>
+
+    </Grid>    
+
+</DockPanel>
