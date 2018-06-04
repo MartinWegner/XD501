@@ -4,7 +4,7 @@ Der **XDOMEA 2 Anbietungsbewerter** ist ein von [PDV-Systeme GmbH](https://www.p
  
 Ziel des Programmes ist es grundlegende Funktionalitäten zur Bewertung von Lieferlisten bereitzustellen. Es dient also dem Einlesen von Lieferlisten (Nachrichtentyp 0501), der Bewertung der Akten und Akteninhalte und der anschließenden Ausgabe der bewertenden Lieferlisten (Nachrichtentyp 0502).
 
-Das Programm zeigt eine übersichtliche Menge an Informationen aus der XDOMEA Spezifikation an. Diese können nach individuellen Anforderungen erweitert werden. Mehr dazu finden Sie im Abschnitt *Technische Ideen*
+Das Programm zeigt eine übersichtliche Menge an Informationen aus der XDOMEA Spezifikation an. Diese können nach individuellen Anforderungen erweitert werden. Mehr dazu finden Sie im Abschnitt *Technische Ideen*.
  
 # Download
 
