@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_274426C913485501C3E2B6FB5FDC6F8D"
+        "MsmKey" = "8:_0B1ED8FAA58EB72461F29FE49380CADF"
         "OwnerKey" = "8:_8C6C992644354702A1419847588B5585"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -58,13 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_274426C913485501C3E2B6FB5FDC6F8D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A9C40104D1B6956BB2273DB042CF0F0C"
+        "OwnerKey" = "8:_5D7803809F82DA924E70B5F77C06745D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,7 +70,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5D7803809F82DA924E70B5F77C06745D"
+        "OwnerKey" = "8:_A9C40104D1B6956BB2273DB042CF0F0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0B1ED8FAA58EB72461F29FE49380CADF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -174,18 +174,13 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_274426C913485501C3E2B6FB5FDC6F8D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B1ED8FAA58EB72461F29FE49380CADF"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_274426C913485501C3E2B6FB5FDC6F8D"
-                    {
-                    "Name" = "8:INIFileParser.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:INIFileParser.dll"
             "TargetName" = "8:"
@@ -212,11 +207,6 @@
             "AssemblyAsmDisplayName" = "8:System.IO.Compression, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
                 "ScatterAssemblies"
                 {
-                    "_5D7803809F82DA924E70B5F77C06745D"
-                    {
-                    "Name" = "8:System.IO.Compression.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.IO.Compression.dll"
             "TargetName" = "8:"
@@ -243,11 +233,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_A9C40104D1B6956BB2273DB042CF0F0C"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -274,11 +259,6 @@
             "AssemblyAsmDisplayName" = "8:System.IO.Compression.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
                 "ScatterAssemblies"
                 {
-                    "_B021280942303DCFF1A1E31A49F8AFE2"
-                    {
-                    "Name" = "8:System.IO.Compression.FileSystem.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.IO.Compression.FileSystem.dll"
             "TargetName" = "8:"
@@ -365,21 +345,21 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:XD501"
-        "ProductCode" = "8:{D17F740C-8EB6-4D21-AE7D-267F62B02BDF}"
-        "PackageCode" = "8:{A4B48164-C89F-4A28-B36B-BBE7FED74896}"
+        "ProductCode" = "8:{64F37B06-1AA6-4CB8-BF00-8E1BC6E6FBF8}"
+        "PackageCode" = "8:{8AB1CAAB-40C5-48F8-858B-F91E8648AB63}"
         "UpgradeCode" = "8:{0544F931-1CE6-46E6-B263-B21069222A2A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:PDV-Systeme"
+        "ProductVersion" = "8:1.1"
+        "Manufacturer" = "8:PDV-Systeme GmbH"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:XDOMEA 2 Anbietungsbewerter"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:PDV-Systeme"
+        "ARPCONTACT" = "8:PDV-Systeme GmbH"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
