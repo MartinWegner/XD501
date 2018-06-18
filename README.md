@@ -9,6 +9,12 @@ Das Programm zeigt eine übersichtliche Menge an Informationen aus der XDOMEA Sp
 # Download
 
 Den Download der aktuellen Version finden sie [hier](https://github.com/MartinWegner/XD501/releases).
+
+Es wird mindestens ein .Net Framwork 4.6 vorausgesetzt.
+ 
+# How To Build
+
+Zur Übersetzung der Quellen wird Visual Studio 2017 benötigt. Im Projekt muss das NuGet-Paket [ini-parser](https://github.com/rickyah/ini-parser) installiert sein, es sind jedoch keine weiteren Visual Studio Extensions notwendig. 
  
 # Kontext
  
